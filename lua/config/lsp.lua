@@ -8,9 +8,11 @@ require("mason-tool-installer").setup({
 		"isort",
 		"black",
 		"latexindent",
+		"eslint_d",
 		"eslint",
 		"stylelint",
 		"flake8",
+		"luacheck",
 		"google-java-format",
 	},
 })
@@ -44,20 +46,29 @@ require("conform").setup({
 	},
 })
 
-require("lint").linters_by_ft = {
+local lint = require("lint")
+
+lint.linters_by_ft = {
 	lua = { "luacheck" },
 	python = { "flake8" },
-	javascript = { "eslint" },
-	typescript = { "eslint" },
+	javascript = { "eslint_d" },
+	typescript = { "eslint_d" },
 	css = { "stylelint" },
 	html = { "stylelint" },
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+	group = lint_augroup,
 	callback = function()
-		require("lint").try_lint()
+		lint.try_lint()
 	end,
 })
+
+vim.keymap.set("n", "<leader>ll", function()
+	lint.try_lint()
+end, { desc = "Trigger linting for current file" })
 
 local lsp = require("lspconfig")
 

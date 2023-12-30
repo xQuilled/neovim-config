@@ -38,9 +38,21 @@ local plugins = {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-nvim-lsp",
-	"L3MON4D3/LuaSnip",
-	"mfussenegger/nvim-lint",
+	{
+		"hrsh7th/cmp-nvim-lsp",
+		dependencies = {
+			"L3MON4D3/LuaSnip",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			"onsails/lspkind-nvim",
+		},
+	},
+	{ "mfussenegger/nvim-lint", event = {
+		"BufReadPre",
+		"BufNewFile",
+	} },
 	"stevearc/conform.nvim",
 	"akinsho/toggleterm.nvim",
 	"kdheepak/lazygit.nvim",
@@ -55,6 +67,7 @@ local plugins = {
 
 	"folke/todo-comments.nvim",
 	"goolord/alpha-nvim",
+	"stevearc/dressing.nvim",
 
 	"lervag/vimtex",
 }
