@@ -8,6 +8,10 @@ require("mason-tool-installer").setup({
 		"isort",
 		"black",
 		"latexindent",
+		"eslint",
+		"stylelint",
+		"flake8",
+		"google-java-format",
 	},
 })
 
@@ -31,12 +35,28 @@ require("conform").setup({
 		css = { { "prettierd", "prettier" } },
 		html = { { "prettierd", "prettier" } },
 		tex = { "latexindent" },
+		java = { "google-java-format" },
 	},
 
 	format_on_save = {
 		timeout_ms = 2000,
 		lsp_fallback = true,
 	},
+})
+
+require("lint").linters_by_ft = {
+	lua = { "luacheck" },
+	python = { "flake8" },
+	javascript = { "eslint" },
+	typescript = { "eslint" },
+	css = { "stylelint" },
+	html = { "stylelint" },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	callback = function()
+		require("lint").try_lint()
+	end,
 })
 
 local lsp = require("lspconfig")
