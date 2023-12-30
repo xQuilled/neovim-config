@@ -54,6 +54,7 @@ local plugins = {
 		"BufNewFile",
 	} },
 	"stevearc/conform.nvim",
+	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	"akinsho/toggleterm.nvim",
 	"kdheepak/lazygit.nvim",
 
