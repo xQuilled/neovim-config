@@ -55,6 +55,8 @@ local plugins = {
 		"BufReadPre",
 		"BufNewFile",
 	} },
+	"mfussenegger/nvim-dap",
+	"rcarriga/nvim-dap-ui",
 	"stevearc/conform.nvim",
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
 	"akinsho/toggleterm.nvim",

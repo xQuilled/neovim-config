@@ -2,19 +2,25 @@ require("mason").setup()
 
 require("mason-tool-installer").setup({
 	ensure_installed = {
+		-- formatters
 		"stylua",
 		"prettierd",
 		"prettier",
 		"isort",
 		"black",
 		"latexindent",
+
+		-- linters
 		"eslint_d",
 		"eslint",
 		"stylelint",
 		"flake8",
 		"luacheck",
+
+		-- debug adapters
 		"google-java-format",
 		"java-debug-adapter",
+		"js-debug-adapter",
 	},
 })
 
