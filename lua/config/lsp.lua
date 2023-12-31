@@ -14,6 +14,7 @@ require("mason-tool-installer").setup({
 		"flake8",
 		"luacheck",
 		"google-java-format",
+		"java-debug-adapter",
 	},
 })
 
@@ -25,6 +26,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"html",
 		"texlab",
+		"jdtls",
 	},
 })
 
