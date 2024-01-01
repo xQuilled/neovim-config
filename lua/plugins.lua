@@ -72,6 +72,7 @@ local plugins = {
 
 	"folke/todo-comments.nvim",
 	"goolord/alpha-nvim",
+	"rcarriga/nvim-notify",
 	"stevearc/dressing.nvim",
 	{
 		"lukas-reineke/indent-blankline.nvim",

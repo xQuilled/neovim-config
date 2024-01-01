@@ -24,6 +24,9 @@ require("mason-tool-installer").setup({
 	},
 })
 
+local lsp = require("lspconfig")
+
+-- setting up lsp servers
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
@@ -33,9 +36,19 @@ require("mason-lspconfig").setup({
 		"html",
 		"texlab",
 		"jdtls",
+		"clangd",
 	},
 })
 
+lsp.lua_ls.setup({})
+lsp.pyright.setup({})
+lsp.tsserver.setup({})
+lsp.cssls.setup({})
+lsp.html.setup({})
+lsp.texlab.setup({})
+lsp.clangd.setup({})
+
+-- setting up formatters
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -54,6 +67,7 @@ require("conform").setup({
 	},
 })
 
+-- setting up linters
 local lint = require("lint")
 
 lint.linters_by_ft = {
@@ -67,25 +81,17 @@ lint.linters_by_ft = {
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 	group = lint_augroup,
 	callback = function()
 		lint.try_lint()
 	end,
 })
 
+-- keymaps for lsp servers
 vim.keymap.set("n", "<leader>ll", function()
 	lint.try_lint()
 end, { desc = "Trigger linting for current file" })
-
-local lsp = require("lspconfig")
-
-lsp.lua_ls.setup({})
-lsp.pyright.setup({})
-lsp.tsserver.setup({})
-lsp.cssls.setup({})
-lsp.html.setup({})
-lsp.texlab.setup({})
 
 vim.keymap.set("n", "<space>cd", vim.diagnostic.open_float, { desc = "Hover diagnostics" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
