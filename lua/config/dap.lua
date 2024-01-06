@@ -1,11 +1,3 @@
-vim.keymap.set("n", "<leader>dc", "<cmd>lua require('dap').continue()<CR>", { desc = "Continue" })
-vim.keymap.set("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", { desc = "Toggle breakpoint" })
-vim.keymap.set("n", "<leader>dn", "<cmd>lua require('dap').step_over()<CR>", { desc = "Step over" })
-vim.keymap.set("n", "<leader>di", "<cmd>lua require('dap').step_into()<CR>", { desc = "Step into" })
-vim.keymap.set("n", "<leader>do", "<cmd>lua require('dap').step_out()<CR>", { desc = "Step out" })
-vim.keymap.set("n", "<leader>dl", "<cmd>lua require('dap').run_last()<CR>", { desc = "Run last" })
-vim.keymap.set("n", "<leader>ds", "<cmd>lua require('dap').close()<CR>", { desc = "Stop" })
-
 local dap = require("dap")
 
 if not dap.adapters["pwa-node"] then

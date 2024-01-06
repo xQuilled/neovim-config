@@ -5,8 +5,32 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 
+-- telescope
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
+
+-- comment line
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "Toggle comment" })
 vim.keymap.set("v", "<leader>/", "gc", { remap = true, desc = "Toggle comment" })
 
--- open lazygit
+-- git
 vim.keymap.set("n", "<leader>g", ":LazyGit<CR>", { noremap = true, silent = true })
+
+-- dap
+vim.keymap.set("n", "<leader>dc", "<cmd>lua require('dap').continue()<CR>", { desc = "Continue" })
+vim.keymap.set("n", "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", { desc = "Toggle breakpoint" })
+vim.keymap.set("n", "<leader>dn", "<cmd>lua require('dap').step_over()<CR>", { desc = "Step over" })
+vim.keymap.set("n", "<leader>di", "<cmd>lua require('dap').step_into()<CR>", { desc = "Step into" })
+vim.keymap.set("n", "<leader>do", "<cmd>lua require('dap').step_out()<CR>", { desc = "Step out" })
+vim.keymap.set("n", "<leader>dl", "<cmd>lua require('dap').run_last()<CR>", { desc = "Run last" })
+vim.keymap.set("n", "<leader>ds", "<cmd>lua require('dap').close()<CR>", { desc = "Stop" })
+
+vim.keymap.set("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", { desc = "Toggle DAP UI" })
+
+-- barbar
+vim.keymap.set("n", "<leader><Tab>", ":BufferNext<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<leader><S-Tab>", ":BufferPrevious<CR>", { desc = "Previous tab" })
+vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", { desc = "Close tab" })

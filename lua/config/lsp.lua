@@ -9,6 +9,7 @@ require("mason-tool-installer").setup({
 		"isort",
 		"black",
 		"latexindent",
+		"clang-format",
 
 		-- linters
 		"eslint_d",
@@ -40,7 +41,15 @@ require("mason-lspconfig").setup({
 	},
 })
 
-lsp.lua_ls.setup({})
+lsp.lua_ls.setup({
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})
 lsp.pyright.setup({})
 lsp.tsserver.setup({})
 lsp.cssls.setup({})
@@ -59,6 +68,8 @@ require("conform").setup({
 		html = { { "prettierd", "prettier" } },
 		tex = { "latexindent" },
 		java = { "google-java-format" },
+		c = { "clang-format" },
+		cpp = { "clang-format" },
 	},
 
 	format_on_save = {
@@ -71,7 +82,7 @@ require("conform").setup({
 local lint = require("lint")
 
 lint.linters_by_ft = {
-	lua = { "luacheck" },
+	-- lua = { "luacheck" },
 	python = { "flake8" },
 	javascript = { "eslint_d" },
 	typescript = { "eslint_d" },
