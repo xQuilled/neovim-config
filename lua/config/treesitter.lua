@@ -13,6 +13,8 @@ require("nvim-treesitter.configs").setup({
 		"css",
 		"java",
 		"latex",
+		"make",
+		"cmake",
 	},
 	sync_install = false,
 	auto_install = true,

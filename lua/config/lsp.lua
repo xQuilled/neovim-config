@@ -10,6 +10,7 @@ require("mason-tool-installer").setup({
 		"black",
 		"latexindent",
 		"clang-format",
+		"cmakelang",
 
 		-- linters
 		"eslint_d",
@@ -17,6 +18,7 @@ require("mason-tool-installer").setup({
 		"stylelint",
 		"flake8",
 		"luacheck",
+		"checkmake",
 
 		-- debug adapters
 		"google-java-format",
@@ -38,6 +40,7 @@ require("mason-lspconfig").setup({
 		"texlab",
 		"jdtls",
 		"clangd",
+		"cmake",
 	},
 })
 
@@ -50,12 +53,14 @@ lsp.lua_ls.setup({
 		},
 	},
 })
+
 lsp.pyright.setup({})
 lsp.tsserver.setup({})
 lsp.cssls.setup({})
 lsp.html.setup({})
 lsp.texlab.setup({})
 lsp.clangd.setup({})
+lsp.cmake.setup({})
 
 -- setting up formatters
 require("conform").setup({
@@ -88,6 +93,7 @@ lint.linters_by_ft = {
 	typescript = { "eslint_d" },
 	css = { "stylelint" },
 	html = { "stylelint" },
+	cmake = { "checkmake" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
