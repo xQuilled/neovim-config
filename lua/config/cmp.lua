@@ -21,4 +21,16 @@ cmp.setup({
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "path" },
 	}),
+
+	window = {
+		completion = cmp.config.window.bordered({
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+		}),
+		documentation = cmp.config.window.bordered({
+			documentation = {
+				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			},
+		}),
+	},
 })
