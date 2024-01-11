@@ -51,6 +51,7 @@ local plugins = {
 			"onsails/lspkind-nvim",
 		},
 	},
+	"hrsh7th/cmp-cmdline",
 	{ "mfussenegger/nvim-lint", event = {
 		"BufReadPre",
 		"BufNewFile",

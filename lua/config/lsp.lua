@@ -105,11 +105,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 	end,
 })
 
--- keymaps for lsp servers
--- vim.keymap.set("n", "<leader>ll", function()
--- 	lint.try_lint()
--- end, { desc = "Trigger linting for current file" })
-
 vim.keymap.set("n", "<space>cd", vim.diagnostic.open_float, { desc = "Hover diagnostics" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
