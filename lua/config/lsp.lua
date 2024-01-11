@@ -11,6 +11,8 @@ require("mason-tool-installer").setup({
 		"latexindent",
 		"clang-format",
 		"cmakelang",
+		"xmlformatter",
+		"djlint",
 
 		-- linters
 		"eslint_d",
@@ -41,6 +43,8 @@ require("mason-lspconfig").setup({
 		"jdtls",
 		"clangd",
 		"cmake",
+		"lemminx",
+		"glint",
 	},
 })
 
@@ -60,6 +64,8 @@ lsp.cssls.setup({})
 lsp.html.setup({})
 lsp.texlab.setup({})
 lsp.clangd.setup({})
+lsp.lemminx.setup({})
+lsp.glint.setup({})
 lsp.cmake.setup({})
 
 -- setting up formatters
@@ -75,6 +81,9 @@ require("conform").setup({
 		java = { "google-java-format" },
 		c = { "clang-format" },
 		cpp = { "clang-format" },
+		handlebars = { "djlint" },
+		xml = { "xmlformatter" },
+		ui = { "xmlformatter" },
 	},
 
 	format_on_save = {

@@ -15,6 +15,8 @@ require("nvim-treesitter.configs").setup({
 		"latex",
 		"make",
 		"cmake",
+		"glimmer",
+		"xml",
 	},
 	sync_install = false,
 	auto_install = true,
