@@ -17,7 +17,7 @@ require("which-key").setup({
 		},
 	},
 	window = {
-		border = "shadow", -- none, single, double, shadow
+		border = "single", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
 		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
 		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
@@ -36,9 +36,10 @@ require("which-key").setup({
 
 require("which-key").register({
 	mode = { "n", "v" },
+	["<leader>w"] = { name = "+workspace" },
 	["<leader>f"] = { name = "+find" },
 	["<leader>c"] = { name = "+code actions" },
-	["<leader>w"] = { name = "+workspace" },
 	["<leader>l"] = { name = "+lsp actions" },
 	["<leader>d"] = { name = "+debug" },
+	["<leader>t"] = { name = "+tools extra" },
 })

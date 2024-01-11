@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help Tags" })
+vim.keymap.set("n", "<leader>fw", builtin.current_buffer_fuzzy_find, { desc = "Find in current buffer" })
 
 -- comment line
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "Toggle comment" })
@@ -34,3 +35,7 @@ vim.keymap.set("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", { de
 vim.keymap.set("n", "<leader><Tab>", ":BufferNext<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<leader><S-Tab>", ":BufferPrevious<CR>", { desc = "Previous tab" })
 vim.keymap.set("n", "<leader>x", ":BufferClose<CR>", { desc = "Close tab" })
+
+vim.keymap.set("n", "<leader>tt", ":TransparentToggle<CR>", { desc = "Toggle transparency" })
+vim.keymap.set("n", "<leader>tl", ":Lazy<CR>", { desc = "Open plugin manager" })
+vim.keymap.set("n", "<leader>tm", ":Mason<CR>", { desc = "Open mason" })

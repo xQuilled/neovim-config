@@ -78,6 +78,7 @@ local plugins = {
 	"stevearc/dressing.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"echasnovski/mini.indentscope",
+	"xiyaowong/transparent.nvim",
 
 	"lervag/vimtex",
 }
