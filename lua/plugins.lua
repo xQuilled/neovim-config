@@ -12,7 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "folke/tokyonight.nvim", name = "tokyonight" },
+
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -79,6 +81,8 @@ local plugins = {
 	"lukas-reineke/indent-blankline.nvim",
 	"echasnovski/mini.indentscope",
 	"xiyaowong/transparent.nvim",
+	"zaldih/themery.nvim",
+	"folke/persistence.nvim",
 
 	"lervag/vimtex",
 }
