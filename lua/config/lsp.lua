@@ -21,11 +21,6 @@ require("mason-tool-installer").setup({
 		"flake8",
 		"luacheck",
 		"checkmake",
-
-		-- debug adapters
-		"google-java-format",
-		"java-debug-adapter",
-		"js-debug-adapter",
 	},
 })
 
