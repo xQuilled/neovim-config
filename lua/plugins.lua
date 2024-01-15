@@ -39,6 +39,7 @@ local plugins = {
 	} },
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+	"windwp/nvim-ts-autotag",
 	"mfussenegger/nvim-jdtls",
 
 	"hrsh7th/nvim-cmp",

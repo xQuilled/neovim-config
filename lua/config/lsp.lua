@@ -40,6 +40,7 @@ require("mason-lspconfig").setup({
 		"cmake",
 		"lemminx",
 		"glint",
+		"tailwindcss",
 	},
 })
 
@@ -62,6 +63,7 @@ lsp.clangd.setup({})
 lsp.lemminx.setup({})
 lsp.glint.setup({})
 lsp.cmake.setup({})
+lsp.tailwindcss.setup({})
 
 -- setting up formatters
 require("conform").setup({

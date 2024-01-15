@@ -26,6 +26,6 @@ vim.opt.expandtab = true
 vim.opt.number = true
 
 -- line wrap
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.o.cmdheight = 0
