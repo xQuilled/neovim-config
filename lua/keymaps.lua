@@ -5,6 +5,11 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 
+-- format
+vim.keymap.set("n", "<leader>F", function()
+	require("conform").format({ lsp_fallback = true })
+end, { desc = "Format buffer" })
+
 -- telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })

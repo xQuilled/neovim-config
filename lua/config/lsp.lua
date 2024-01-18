@@ -82,11 +82,6 @@ require("conform").setup({
 		xml = { "xmlformatter" },
 		ui = { "xmlformatter" },
 	},
-
-	format_on_save = {
-		timeout_ms = 2000,
-		lsp_fallback = true,
-	},
 })
 
 -- setting up linters
