@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
-  { "gbprod/nord.nvim", name = "nord" },
+	{ "gbprod/nord.nvim", name = "nord" },
 
 	"folke/which-key.nvim",
 
@@ -70,6 +70,8 @@ local plugins = {
 		end,
 	},
 
+	{ "folke/persistence.nvim", event = "BufReadPre" },
+
 	"folke/todo-comments.nvim",
 	"goolord/alpha-nvim",
 	"rcarriga/nvim-notify",
@@ -78,7 +80,6 @@ local plugins = {
 	"echasnovski/mini.indentscope",
 	"xiyaowong/transparent.nvim",
 	"zaldih/themery.nvim",
-	"folke/persistence.nvim",
 	"kevinhwang91/nvim-ufo",
 	"kevinhwang91/promise-async",
 
