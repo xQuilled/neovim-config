@@ -3,6 +3,11 @@ require("transparent").setup({
 		"NormalFloat",
 		"NvimTreeNormal", -- NvimTree
 
+		"FloatBorder",
+		"TelescopeBorder",
+
+		"UfoFoldedBg",
+
 		-- lualine groups
 		"lualine_c_normal",
 		"lualine_transitional_lualine_b_normal_to_lualine_c_normal",

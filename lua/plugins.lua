@@ -14,15 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
+  { "gbprod/nord.nvim", name = "nord" },
 
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-	},
+	"folke/which-key.nvim",
+
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	"lewis6991/gitsigns.nvim",
@@ -84,6 +79,8 @@ local plugins = {
 	"xiyaowong/transparent.nvim",
 	"zaldih/themery.nvim",
 	"folke/persistence.nvim",
+	"kevinhwang91/nvim-ufo",
+	"kevinhwang91/promise-async",
 
 	"lervag/vimtex",
 }
