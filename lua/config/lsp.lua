@@ -41,6 +41,7 @@ require("mason-lspconfig").setup({
 		"lemminx",
 		"glint",
 		"tailwindcss",
+		"jsonls",
 	},
 })
 
@@ -64,6 +65,7 @@ lsp.lemminx.setup({})
 lsp.glint.setup({})
 lsp.cmake.setup({})
 lsp.tailwindcss.setup({})
+lsp.jsonls.setup({})
 
 -- setting up formatters
 require("conform").setup({
@@ -72,6 +74,7 @@ require("conform").setup({
 		python = { "isort", "black" },
 		javascript = { { "prettierd", "prettier" } },
 		typescript = { { "prettierd", "prettier" } },
+		json = { { "prettierd", "prettier" } },
 		css = { { "prettierd", "prettier" } },
 		html = { { "prettierd", "prettier" } },
 		tex = { "latexindent" },
