@@ -12,9 +12,9 @@ end, { noremap = true, silent = true, desc = "Save and format" })
 -- open file in file manager
 vim.keymap.set(
 	"n",
-	"<leader>D",
-	"<cmd>!dolphin %:p:h &<CR>",
-	{ noremap = true, silent = true, desc = "Open file in Dolphin" }
+	"<leader>n",
+	"<cmd>!nemo %:p:h &<CR>",
+	{ noremap = true, silent = true, desc = "Open file in Nemo" }
 )
 
 -- format
