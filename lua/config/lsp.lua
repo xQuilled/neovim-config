@@ -55,17 +55,19 @@ lsp.lua_ls.setup({
 	},
 })
 
-lsp.pyright.setup({})
-lsp.tsserver.setup({})
-lsp.cssls.setup({})
-lsp.html.setup({})
-lsp.texlab.setup({})
-lsp.clangd.setup({})
-lsp.lemminx.setup({})
-lsp.glint.setup({})
-lsp.cmake.setup({})
-lsp.tailwindcss.setup({})
-lsp.jsonls.setup({})
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lsp.pyright.setup({ capabilities = capabilities })
+lsp.tsserver.setup({ capabilities = capabilities })
+lsp.cssls.setup({ capabilities = capabilities })
+lsp.html.setup({ capabilities = capabilities })
+lsp.texlab.setup({ capabilities = capabilities })
+lsp.clangd.setup({ capabilities = capabilities })
+lsp.lemminx.setup({ capabilities = capabilities })
+lsp.glint.setup({ capabilities = capabilities })
+lsp.cmake.setup({ capabilities = capabilities })
+lsp.tailwindcss.setup({ capabilities = capabilities })
+lsp.jsonls.setup({ capabilities = capabilities })
 
 -- setting up formatters
 require("conform").setup({
