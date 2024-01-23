@@ -82,6 +82,7 @@ local plugins = {
 	"zaldih/themery.nvim",
 	"kevinhwang91/nvim-ufo",
 	"kevinhwang91/promise-async",
+	"norcalli/nvim-colorizer.lua",
 
 	"lervag/vimtex",
 }
