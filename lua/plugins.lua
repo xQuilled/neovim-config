@@ -12,7 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				flavour = "macchiato",
+				transparent_background = false,
+			})
+		end,
+	},
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
 	{ "gbprod/nord.nvim", name = "nord" },
 
