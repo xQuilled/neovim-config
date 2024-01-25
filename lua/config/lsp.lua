@@ -45,7 +45,10 @@ require("mason-lspconfig").setup({
 	},
 })
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 lsp.lua_ls.setup({
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -54,15 +57,18 @@ lsp.lua_ls.setup({
 		},
 	},
 })
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 lsp.pyright.setup({ capabilities = capabilities })
 lsp.tsserver.setup({ capabilities = capabilities })
 lsp.cssls.setup({ capabilities = capabilities })
 lsp.html.setup({ capabilities = capabilities })
 lsp.texlab.setup({ capabilities = capabilities })
-lsp.clangd.setup({ capabilities = capabilities })
+lsp.clangd.setup({
+	capabilities = capabilities,
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+	},
+})
 lsp.lemminx.setup({ capabilities = capabilities })
 lsp.glint.setup({ capabilities = capabilities })
 lsp.cmake.setup({ capabilities = capabilities })
