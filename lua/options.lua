@@ -37,3 +37,5 @@ vim.o.foldlevelstart = 99
 
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+
+vim.g.mkdp_browser = "google-chrome-stable"

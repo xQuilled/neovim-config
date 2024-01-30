@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+
+	-- themes
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -24,6 +26,7 @@ local plugins = {
 	},
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
 	{ "gbprod/nord.nvim", name = "nord" },
+	"zaldih/themery.nvim",
 
 	"folke/which-key.nvim",
 
@@ -31,6 +34,8 @@ local plugins = {
 	"nvim-tree/nvim-web-devicons",
 	"lewis6991/gitsigns.nvim",
 	"nvim-lualine/lualine.nvim",
+
+	-- syntax highlighting, lsp, and autocompletion
 	"nvim-treesitter/nvim-treesitter",
 	{
 		"nvim-telescope/telescope.nvim",
@@ -45,7 +50,7 @@ local plugins = {
 	"neovim/nvim-lspconfig",
 	"windwp/nvim-ts-autotag",
 	"mfussenegger/nvim-jdtls",
-
+	"stevearc/conform.nvim",
 	"hrsh7th/nvim-cmp",
 	{
 		"hrsh7th/cmp-nvim-lsp",
@@ -63,13 +68,24 @@ local plugins = {
 		"BufReadPre",
 		"BufNewFile",
 	} },
+
+	-- debuggers
 	"mfussenegger/nvim-dap",
 	"jay-babu/mason-nvim-dap.nvim",
 	"rcarriga/nvim-dap-ui",
-	"stevearc/conform.nvim",
+
 	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
+	"windwp/nvim-ts-autotag",
 	"akinsho/toggleterm.nvim",
 	"kdheepak/lazygit.nvim",
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 
 	"romgrk/barbar.nvim",
 	{
@@ -81,17 +97,28 @@ local plugins = {
 
 	{ "folke/persistence.nvim", event = "BufReadPre" },
 
-	"folke/todo-comments.nvim",
+	{
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	},
 	"goolord/alpha-nvim",
 	"rcarriga/nvim-notify",
 	"stevearc/dressing.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"echasnovski/mini.indentscope",
 	"xiyaowong/transparent.nvim",
-	"zaldih/themery.nvim",
 	"kevinhwang91/nvim-ufo",
 	"kevinhwang91/promise-async",
 	"norcalli/nvim-colorizer.lua",
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").setup({})
+			require("leap").create_default_mappings()
+		end,
+	},
 
 	"lervag/vimtex",
 }
