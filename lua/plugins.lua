@@ -109,8 +109,6 @@ local plugins = {
 	"lukas-reineke/indent-blankline.nvim",
 	"echasnovski/mini.indentscope",
 	"xiyaowong/transparent.nvim",
-	"kevinhwang91/nvim-ufo",
-	"kevinhwang91/promise-async",
 	"norcalli/nvim-colorizer.lua",
 	{
 		"ggandor/leap.nvim",
