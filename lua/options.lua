@@ -30,11 +30,6 @@ vim.opt.wrap = true
 
 vim.o.cmdheight = 1
 
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-vim.o.foldcolumn = "1"
-vim.o.foldenable = true
-vim.o.foldlevelstart = 99
-
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
