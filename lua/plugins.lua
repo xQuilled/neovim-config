@@ -26,6 +26,10 @@ local plugins = {
 	},
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
 	{ "gbprod/nord.nvim", name = "nord" },
+	{ "Mofiqul/dracula.nvim", name = "dracula" },
+	{ "ellisonleao/gruvbox.nvim", name = "gruvbox" },
+	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "navarasu/onedark.nvim", name = "onedark" },
 	"zaldih/themery.nvim",
 
 	"folke/which-key.nvim",
@@ -50,6 +54,7 @@ local plugins = {
 	"neovim/nvim-lspconfig",
 	"windwp/nvim-ts-autotag",
 	"mfussenegger/nvim-jdtls",
+	"lervag/vimtex",
 	"stevearc/conform.nvim",
 	"hrsh7th/nvim-cmp",
 	{
@@ -117,8 +122,6 @@ local plugins = {
 			require("leap").create_default_mappings()
 		end,
 	},
-
-	"lervag/vimtex",
 }
 
 local opts = {}

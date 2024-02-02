@@ -5,6 +5,10 @@ require("themery").setup({
 	themes = {
 		"catppuccin",
 		"tokyonight",
-    "nord",
-	}, -- Your list of installed colorschemes
+		"nord",
+		"dracula",
+		"gruvbox",
+		"rose-pine",
+		"onedark",
+	},
 })

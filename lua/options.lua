@@ -33,12 +33,15 @@ vim.o.cmdheight = 1
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
+-- replace "~" on the lines
+vim.opt.fillchars = { eob = " " }
+
 vim.g.mkdp_browser = "google-chrome-stable"
 
 -- dap icons
-vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '#31353f' })
-vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '#31353f' })
-vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '#31353f' })
+vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#31353f" })
+vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "#31353f" })
+vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#98c379", bg = "#31353f" })
 
 vim.fn.sign_define(
 	"DapBreakpoint",
