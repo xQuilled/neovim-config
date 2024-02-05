@@ -36,7 +36,12 @@ local plugins = {
 
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
-	"lewis6991/gitsigns.nvim",
+	{
+		"lewis6991/gitsigns.nvim",
+		cofing = function()
+			require("gitsigns").setup()
+		end,
+	},
 	"nvim-lualine/lualine.nvim",
 
 	-- syntax highlighting, lsp, and autocompletion

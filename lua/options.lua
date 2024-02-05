@@ -38,6 +38,10 @@ vim.opt.fillchars = { eob = " " }
 
 vim.g.mkdp_browser = "google-chrome-stable"
 
+-- vimtex
+vim.g["vimtex_context_pdf_viewer"] = "okular"
+vim.g["vimtex_syntax_enabled"] = 1
+
 -- dap icons
 vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#31353f" })
 vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "#31353f" })
