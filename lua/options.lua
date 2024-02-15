@@ -37,10 +37,16 @@ vim.o.timeoutlen = 300
 vim.opt.fillchars = { eob = " " }
 
 vim.g.mkdp_browser = "google-chrome-stable"
+vim.g.mkdp_auto_start = 1
+vim.g.mkdp_auto_close = 1
 
 -- vimtex
 vim.g["vimtex_context_pdf_viewer"] = "okular"
 vim.g["vimtex_syntax_enabled"] = 1
+
+-- omnisharp
+-- vim.g.omnisharp_server_stdio = 1
+-- vim.g.OmniSharp_server_path = "/home/alytarfa/.local/share/nvim/mason/bin/omnisharp"
 
 -- dap icons
 vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#31353f" })

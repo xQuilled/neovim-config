@@ -32,18 +32,6 @@ local plugins = {
 	{ "navarasu/onedark.nvim", name = "onedark" },
 	"zaldih/themery.nvim",
 
-	"folke/which-key.nvim",
-
-	"nvim-tree/nvim-tree.lua",
-	"nvim-tree/nvim-web-devicons",
-	{
-		"lewis6991/gitsigns.nvim",
-		cofing = function()
-			require("gitsigns").setup()
-		end,
-	},
-	"nvim-lualine/lualine.nvim",
-
 	-- syntax highlighting, lsp, and autocompletion
 	"nvim-treesitter/nvim-treesitter",
 	{
@@ -52,14 +40,11 @@ local plugins = {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	"zbirenbaum/copilot.lua",
-	{ "williamboman/mason.nvim", dependencies = {
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	} },
+	"williamboman/mason.nvim",
+	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"windwp/nvim-ts-autotag",
-	"mfussenegger/nvim-jdtls",
-	"lervag/vimtex",
 	"stevearc/conform.nvim",
 	"hrsh7th/nvim-cmp",
 	{
@@ -78,16 +63,16 @@ local plugins = {
 		"BufReadPre",
 		"BufNewFile",
 	} },
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	},
 
-	-- debuggers
-	"mfussenegger/nvim-dap",
-	"jay-babu/mason-nvim-dap.nvim",
-	"rcarriga/nvim-dap-ui",
-
-	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
-	"windwp/nvim-ts-autotag",
-	"akinsho/toggleterm.nvim",
-	"kdheepak/lazygit.nvim",
+	-- language specific tools
+	"mfussenegger/nvim-jdtls",
+	"lervag/vimtex",
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -97,29 +82,18 @@ local plugins = {
 		end,
 	},
 
-	"romgrk/barbar.nvim",
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	},
+	-- debuggers
+	"mfussenegger/nvim-dap",
+	"jay-babu/mason-nvim-dap.nvim",
+	"rcarriga/nvim-dap-ui",
 
-	{ "folke/persistence.nvim", event = "BufReadPre" },
+	-- git
+	"kdheepak/lazygit.nvim",
+	"lewis6991/gitsigns.nvim",
 
-	{
-		"folke/todo-comments.nvim",
-		config = function()
-			require("todo-comments").setup()
-		end,
-	},
-	"goolord/alpha-nvim",
-	"rcarriga/nvim-notify",
-	"stevearc/dressing.nvim",
-	"lukas-reineke/indent-blankline.nvim",
-	"echasnovski/mini.indentscope",
-	"xiyaowong/transparent.nvim",
-	"norcalli/nvim-colorizer.lua",
+	-- typing and navigation tools
+	{ "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
+	"windwp/nvim-ts-autotag",
 	{
 		"ggandor/leap.nvim",
 		config = function()
@@ -127,6 +101,40 @@ local plugins = {
 			require("leap").create_default_mappings()
 		end,
 	},
+
+	-- buffers
+	"nvim-tree/nvim-tree.lua",
+	"akinsho/toggleterm.nvim",
+	"romgrk/barbar.nvim",
+
+	-- ui and visual tools
+	{
+		"folke/todo-comments.nvim",
+		config = function()
+			require("todo-comments").setup()
+		end,
+	},
+	"goolord/alpha-nvim",
+	"lukas-reineke/indent-blankline.nvim",
+	"echasnovski/mini.indentscope",
+	"xiyaowong/transparent.nvim",
+	"norcalli/nvim-colorizer.lua",
+	"folke/which-key.nvim",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lualine/lualine.nvim",
+	"stevearc/dressing.nvim",
+	-- lazy.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+
+	-- others
+	{ "folke/persistence.nvim", event = "BufReadPre" },
 }
 
 local opts = {}

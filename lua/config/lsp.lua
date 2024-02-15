@@ -21,14 +21,7 @@ require("mason-tool-installer").setup({
 		"flake8",
 		"luacheck",
 		"checkmake",
-	},
-})
 
-local lsp = require("lspconfig")
-
--- setting up lsp servers
-require("mason-lspconfig").setup({
-	ensure_installed = {
 		"lua_ls",
 		"pyright",
 		"tsserver",
@@ -42,9 +35,11 @@ require("mason-lspconfig").setup({
 		"glint",
 		"tailwindcss",
 		"jsonls",
+		"omnisharp",
 	},
 })
 
+local lsp = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp.lua_ls.setup({
@@ -74,6 +69,8 @@ lsp.glint.setup({ capabilities = capabilities })
 lsp.cmake.setup({ capabilities = capabilities })
 lsp.tailwindcss.setup({ capabilities = capabilities })
 lsp.jsonls.setup({ capabilities = capabilities })
+lsp.omnisharp.setup({ capabilities = capabilities, cmd = { "omnisharp", "--languageserver" } })
+lsp.cmake.setup({ capabilities = capabilities })
 
 -- setting up formatters
 require("conform").setup({
@@ -92,6 +89,8 @@ require("conform").setup({
 		handlebars = { "djlint" },
 		xml = { "xmlformatter" },
 		ui = { "xmlformatter" },
+		cmake = { "cmakelang" },
+		make = { "cmakelang" },
 	},
 })
 
