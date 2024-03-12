@@ -81,6 +81,7 @@ local plugins = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+	"habamax/vim-godot",
 
 	-- debuggers
 	"mfussenegger/nvim-dap",
