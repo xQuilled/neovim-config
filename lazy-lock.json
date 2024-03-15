@@ -54,6 +54,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "b49df5cdce67a8964d1b027dae94bde212092b51" },
   "tokyonight": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "transparent.nvim": { "branch": "main", "commit": "fd35a46f4b7c1b244249266bdcb2da3814f01724" },
+  "vim-godot": { "branch": "master", "commit": "f9c0b36b299efcc4aa4cb119a2be36a83fe10388" },
   "vimtex": { "branch": "master", "commit": "32d8541967115eddbb3a38961d51f987d5e28f0d" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

@@ -71,6 +71,7 @@ lsp.tailwindcss.setup({ capabilities = capabilities })
 lsp.jsonls.setup({ capabilities = capabilities })
 lsp.omnisharp.setup({ capabilities = capabilities, cmd = { "omnisharp", "--languageserver" } })
 lsp.cmake.setup({ capabilities = capabilities })
+lsp.gdscript.setup({ capabilities = capabilities })
 
 -- setting up formatters
 require("conform").setup({

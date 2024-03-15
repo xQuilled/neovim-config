@@ -7,7 +7,6 @@ require("mason-nvim-dap").setup({
 		"chrome",
 		"node",
 		"codelldb",
-		"javadbg",
 	},
 })
 
