@@ -22,6 +22,14 @@ require("noice").setup({
 	},
 })
 
+require("notify").setup({
+	background_colour = "#000000",
+	render = "minimal",
+	stages = "slide",
+	timeout = 3000,
+	top_down = true,
+})
+
 require("themery").setup({
 	themeConfigFile = "~/.config/nvim/lua/options.lua",
 
