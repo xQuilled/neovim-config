@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.opt.syntax = "on"
 
 vim.opt.clipboard = "unnamedplus"
 
@@ -36,7 +37,7 @@ vim.o.timeoutlen = 300
 -- replace "~" on the lines
 vim.opt.fillchars = { eob = " " }
 
-vim.g.mkdp_browser = "google-chrome-stable"
+vim.g.mkdp_browser = "firefox"
 vim.g.mkdp_auto_start = 1
 vim.g.mkdp_auto_close = 1
 
@@ -55,7 +56,7 @@ vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#98c379", bg = "#31353
 
 vim.fn.sign_define(
 	"DapBreakpoint",
-	{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+	{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
 )
 vim.fn.sign_define(
 	"DapBreakpointCondition",
