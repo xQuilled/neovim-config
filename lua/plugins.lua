@@ -17,12 +17,6 @@ local plugins = {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		config = function()
-			require("catppuccin").setup({
-				flavour = "macchiato",
-				transparent_background = false,
-			})
-		end,
 	},
 	{ "folke/tokyonight.nvim", name = "tokyonight" },
 	{ "gbprod/nord.nvim", name = "nord" },
@@ -40,6 +34,7 @@ local plugins = {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	"zbirenbaum/copilot.lua",
+	"CopilotC-Nvim/CopilotChat.nvim",
 	"williamboman/mason.nvim",
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -59,10 +54,13 @@ local plugins = {
 		},
 	},
 	"hrsh7th/cmp-cmdline",
-	{ "mfussenegger/nvim-lint", event = {
-		"BufReadPre",
-		"BufNewFile",
-	} },
+	{
+		"mfussenegger/nvim-lint",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+	},
 	{
 		"numToStr/Comment.nvim",
 		config = function()
@@ -87,6 +85,7 @@ local plugins = {
 	"mfussenegger/nvim-dap",
 	"jay-babu/mason-nvim-dap.nvim",
 	"rcarriga/nvim-dap-ui",
+	"nvim-neotest/nvim-nio",
 
 	-- git
 	"kdheepak/lazygit.nvim",

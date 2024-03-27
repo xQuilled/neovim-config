@@ -6,3 +6,12 @@ require("copilot").setup({
 		},
 	},
 })
+
+require("CopilotChat").setup({
+	debug = true,
+	window = {
+		layout = "float",
+		title = "Copilot Chat",
+		border = "rounded",
+	},
+})
