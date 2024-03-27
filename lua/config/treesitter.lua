@@ -18,10 +18,18 @@ require("nvim-treesitter.configs").setup({
 		"glimmer",
 		"xml",
 		"markdown",
+		"hyprlang",
+		"xml",
+		"json",
+		"yaml",
 	},
 	sync_install = false,
 	auto_install = true,
 	highlight = {
 		enable = true,
 	},
+})
+
+vim.filetype.add({
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
