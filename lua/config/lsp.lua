@@ -19,9 +19,9 @@ require("mason-tool-installer").setup({
 		"eslint",
 		"stylelint",
 		"flake8",
-		"luacheck",
 		"checkmake",
 
+		-- lsp
 		"lua_ls",
 		"pyright",
 		"tsserver",
@@ -84,14 +84,21 @@ require("conform").setup({
 		css = { { "prettierd", "prettier" } },
 		html = { { "prettierd", "prettier" } },
 		tex = { "latexindent" },
-		java = { "google-java-format" },
-		c = { "clang-format" },
-		cpp = { "clang-format" },
+		java = { "google_java_format" },
+		c = { "clang_format" },
+		cpp = { "clang_format" },
 		handlebars = { "djlint" },
 		xml = { "xmlformatter" },
 		ui = { "xmlformatter" },
 		cmake = { "cmakelang" },
 		make = { "cmakelang" },
+	},
+
+	formatters = {
+		clang_format = {
+			-- to create default config, $ clang-format -style=llvm -dump-config > .clang-format
+			prepend_args = { ("-style=file:" .. vim.fn.expand("~/.config/nvim/format/.clang-format")) },
+		},
 	},
 })
 
@@ -99,7 +106,6 @@ require("conform").setup({
 local lint = require("lint")
 
 lint.linters_by_ft = {
-	-- lua = { "luacheck" },
 	python = { "flake8" },
 	javascript = { "eslint_d" },
 	typescript = { "eslint_d" },
