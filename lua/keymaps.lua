@@ -13,8 +13,8 @@ end, { noremap = true, silent = true, desc = "Save and format" })
 vim.keymap.set(
 	"n",
 	"<leader>n",
-	"<cmd>!nemo %:p:h &<CR>",
-	{ noremap = true, silent = true, desc = "Open file in Nemo" }
+	"<cmd>!dolphin %:p:h &<CR>",
+	{ noremap = true, silent = true, desc = "Open file in Dolphin" }
 )
 
 -- format
