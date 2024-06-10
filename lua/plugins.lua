@@ -34,7 +34,6 @@ local plugins = {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	"zbirenbaum/copilot.lua",
-	"CopilotC-Nvim/CopilotChat.nvim",
 	"williamboman/mason.nvim",
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"williamboman/mason-lspconfig.nvim",
