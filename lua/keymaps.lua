@@ -5,21 +5,21 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- save and format
 vim.keymap.set("n", "<C-s>", function()
-  require("conform").format({ lsp_fallback = true })
-  vim.cmd("w")
+	require("conform").format({ lsp_fallback = true })
+	vim.cmd("w")
 end, { noremap = true, silent = true, desc = "Save and format" })
 
 -- open file in file manager
 vim.keymap.set(
-  "n",
-  "<leader>n",
-  "<cmd>!dolphin %:p:h &<CR>",
-  { noremap = true, silent = true, desc = "Open file in Dolphin" }
+	"n",
+	"<leader>n",
+	"<cmd>!dolphin %:p:h &<CR>",
+	{ noremap = true, silent = true, desc = "Open file in Dolphin" }
 )
 
 -- format
 vim.keymap.set("n", "<leader>F", function()
-  require("conform").format({ lsp_fallback = true })
+	require("conform").format({ lsp_fallback = true })
 end, { desc = "Format buffer" })
 
 -- telescope
